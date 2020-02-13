@@ -1,0 +1,49 @@
+Danger log:
+
+01/20/2020:
+We've come out with the register page, but for the moment we stored our password with plain text, which is very insecure.
+
+01/22/2020:
+We found out that we can make use of the usercreationform, which is built-in in django. Problem solved.
+
+01/24/2020:
+After a user request a ride, the information hasn't been stored into DB. Fixed by save form into database.
+
+01/25/2020:
+The user can get access to the driver's home page without registering as a driver.
+
+01/27/2020:
+When request a ride/join a ride/edit a ride, the username will show up and is editable. If we do change it, it will cause unexpected results when searching rides.
+
+01/29/2020:
+When searching for the ride information, if there're no matching fields, the whole page will come out with an error. We fix it by using get_object_or_404 method and try-except statement.
+
+01/31/2020:
+Our driver can confirm his/her own ride, which is practically unreasonable. Fixed it by adding a filter.
+
+02/02/2020:
+We are making use of the same ride detail page. It can be accessed by various hyperlinks. Therefore we created different html pages, each page corresponding to one entry.
+
+02/03/2020:
+The owner can only access his/her open ride but not confirmed ride. It will make the confirmed ride untrackable for owners. Turned out the problem's on the definition of ModelForm.
+
+02/04/2020:
+When searching for open rides, the driver can directly change the status of ride from 'open' to 'complete', and from 'confirmed' or 'complete' back to 'open'.
+
+02/05/2020:
+The user can edit his/her ride both as an owner and a sharer. However the sharer is not supposed to edit ride info. Fixed by checking if the user is the owner of the ride, the edit button only exits when the user is owner.
+
+02/06/2020:
+The user can edit other's open ride, which is practically dangerous. Fixed by adding one more filter statement, checking whether the owner of ride is the current user.
+
+
+
+
+
+
+
+
+
+
+
+
